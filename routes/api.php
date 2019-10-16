@@ -17,5 +17,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/register', 'Auth\Authcontroller@register');
-Route::post('/login', 'Auth\Authcontroller@login');
+Route::post('/register', 'Api\Authcontroller@register');
+Route::post('/login', 'Api\Authcontroller@login');
+// Route::post('/password/reset','ForgotPasswordController');
