@@ -65,7 +65,7 @@ class UserController extends Controller
 
         }
 
-    
+
 
 
 //Resend Code
@@ -82,6 +82,6 @@ class UserController extends Controller
         }
         $user->validate_code = 1234;
         $user->save();
-        return response()->json(['Code has been send Successfully']);
+        return response()->json(['Code has been send Successfullly']);
     }
 }
