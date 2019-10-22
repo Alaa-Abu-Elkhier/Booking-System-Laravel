@@ -5,6 +5,8 @@ use App\User;
 use Hash;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+
 
 class UserController extends Controller
 {
@@ -21,18 +23,6 @@ class UserController extends Controller
     $accessToken = auth()->user()->createToken('authToken')->accessToken;
     return response(['user'=>(auth()->user()), 'accessToken'=>$accessToken]);
   }
-
-  //forgetting password, Send code to email
-  public function forgotPassword(Request $request){
-       $user = User::whereEmail($request->email)->first();
-       if(!$user){
-        return response(['message'=>'user not found']);
-       };
-
-       $user->validate_code = mt_rand(1000, 9999);
-       $user->save();
-       return response(['message'=>'Code has been send Successfully']);
-   }
 
   //reset new password and validate code
   public function resetPasswords(Request $request){
@@ -57,6 +47,31 @@ class UserController extends Controller
       $user->save();
       return response(['message'=>'Password has been changed successfully']);
    }
+
+    //forgetting password, Send code to email
+    public function forgotPassword(Request $request){
+        $user = User::whereEmail($request->email)->first();
+        if(!$user){
+            return response(['message'=>'user not found']);
+        };
+
+        $user->validate_code = mt_rand(1000, 9999);
+        $user->save();
+
+        $data = array(
+            'name' => $user->name,
+            'code' => $user->validate_code,
+            'email' => $user->email,
+        );
+
+        Mail::send('mail', $data, function($message) use ($data, $user){
+            $message->from('smsoma98@gmail.com');
+            $message->to($user->email);
+            $message->subject('Validation Code');
+        });
+
+        return response(['message'=>'Code has been send Successfully']);
+    }
 }
 
 

@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="303957cd-3bf4-401a-8355-673e21680b34" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -132,11 +134,14 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="S:\projects\Booking_system\resources\views" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="K:\Booking_system\resources\views\layout" />
     </key>
@@ -175,6 +180,8 @@
       <workItem from="1571657963272" duration="271000" />
       <workItem from="1571658855748" duration="2083000" />
       <workItem from="1571663532427" duration="8000" />
+      <workItem from="1571667250573" duration="2270000" />
+      <workItem from="1571743115518" duration="8753000" />
     </task>
     <servers />
   </component>
